@@ -17,6 +17,10 @@ export default class App extends Component {
         ]
     }
     //addTodo用于添加一个todo，接收的参数是todo对象
+
+
+
+
     addTodo = (todoObj) => {
         //获取原todos
         const { todos } = this.state
