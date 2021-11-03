@@ -10,14 +10,21 @@ export default class Item extends Component {
 
         }
     }
+    //勾选、取消勾选某一个todo的回调
+    handleCheck = (id) => {
+        return (e) => {
+            // console.log(e.target.checked);
+            this.props.updateTodo(id, e.target.checked)
+        }
+    }
     render() {
         const { mouse } = this.state
-        const { name, done } = this.props
+        const { id, name, done } = this.props
         return (
             <div style={{ backgroundColor: mouse ? '#ddd' : 'white' }}>
                 <li onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)}>
                     <label>
-                        <input type="checkbox" defaultChecked={done} />
+                        <input type="checkbox" defaultChecked={done} onChange={this.handleCheck(id)} />
                         <span>{name}</span>
                     </label>
                     <button className="btn btn-danger" style={{ display: mouse ? 'block' : 'none' }}>删除</button>
