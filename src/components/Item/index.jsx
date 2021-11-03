@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import './index.css'
 
 export default class Item extends Component {
     state = { mouse: false } //标识鼠标移入、移出，给其添加样式
+
     //鼠标移入、移出的回调,{高阶函数（柯里化），返回一个函数}
     handleMouse = (flag) => {
         return () => {

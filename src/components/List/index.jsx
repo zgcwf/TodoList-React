@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
+import ProTypes from 'prop-types'
 import Item from '../Item'
 import './index.css'
 
 export default class List extends Component {
+    static proTypes = {
+        todos: ProTypes.array.isRequired,
+        updateTodo: ProTypes.func.isRequired,
+    }
     render() {
         const { todos, updateTodo } = this.props
 
